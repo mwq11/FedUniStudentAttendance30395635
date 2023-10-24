@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/primary_blue_grey"
+        android:text="@string/student_name"
+        android:gravity="center"
+        android:textColor="@color/white"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/add"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="20dp"
+        android:src="@mipmap/ic_add"
+        />
+</FrameLayout>
