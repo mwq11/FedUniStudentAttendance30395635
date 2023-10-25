@@ -52,7 +52,7 @@ public class CheckAdapter extends BaseQuickAdapter<ClassBean, BaseViewHolder> {
 
                     @Override
                     public void onSuccess(List<StudentBean> list) {
-                        //查询到结果
+                        //Query result
                         if (list.size() != 0) {
                             mAdapter.setNewData(list);
                             for (StudentBean bean : list) {

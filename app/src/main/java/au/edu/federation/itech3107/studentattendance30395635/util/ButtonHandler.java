@@ -7,7 +7,7 @@ import android.os.Message;
 import java.lang.ref.WeakReference;
 
 /**
- * 点击确定dialog不消失
+ * Click OK the dialog does not disappear
  */
 public class ButtonHandler extends Handler {
 

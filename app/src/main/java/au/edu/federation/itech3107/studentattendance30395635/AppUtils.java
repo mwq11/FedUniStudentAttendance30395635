@@ -23,42 +23,43 @@ import au.edu.federation.itech3107.studentattendance30395635.util.TimeUtils;
 public class AppUtils {
 
     /**
-     * 生成UUID
+     * Generate UUID
      */
     public static String createUUID() {
         return UUID.randomUUID().toString().replace("-", "");
     }
 
     /**
-     * 获取当前周数
+     * Gets the current number of weeks
      */
     public static int getCurrentWeek(Context context) {
         int week = 1;
 
-        //获取开始时间
+        //Get start time
         String beginMillis = Preferences.getString(context.getString(
                 R.string.app_preference_start_week_begin_millis), "");
 
-        //获取当前时间
+        //Get current time
         long currentMillis = Calendar.getInstance().getTimeInMillis();
 
-        //存在开始时间
+        //Existence start time
         if (!TextUtils.isEmpty(beginMillis)) {
             long intBeginMillis = Long.valueOf(beginMillis);
 
-            //获取到的配置是时间大于当前时间 重置为第一周
+            //The obtained configuration is time greater than the
+            // current time reset to the first week
             if (intBeginMillis > currentMillis) {
                 PreferencesCurrentWeek(context, 1);
 
             } else {
-                //计算出开始时间到现在时间的周数
+                //Calculate the number of weeks between the start time and the present time
                 int weekGap = TimeUtils.getWeekGap(intBeginMillis, currentMillis);
 
                 week += weekGap;
             }
 
         } else {
-            //不存在开始时间 初始化为第一周
+            //There is no start time initialized to the first week
             PreferencesCurrentWeek(context, 1);
         }
 
@@ -66,10 +67,10 @@ public class AppUtils {
     }
 
     /**
-     * 更改当前周
+     * Change current week
      */
     public static void PreferencesCurrentWeek(Context context, int currentWeekCount) {
-        //得到一个当前周 周一的日期
+        //Get a date for the Monday of the current week
         Calendar calendar = Calendar.getInstance();
         Date weekBegin = TimeUtils.getNowWeekBegin();
         calendar.setTime(weekBegin);
@@ -84,16 +85,16 @@ public class AppUtils {
     }
 
     /**
-     * 根据邮箱获取gravator头像
+     * Get the gravator avatar based on the mailbox
      */
     public static String getGravatar(String email) {
-        String emailMd5 = AppUtils.md5Hex(email);        //设置图片大小32px
+        String emailMd5 = AppUtils.md5Hex(email);
         String avatar = "http://www.gravatar.com/avatar/" + emailMd5 + "?s=128";
         return avatar;
     }
 
     /**
-     * 更新widget组件
+     * Update widget components
      */
     public static void updateWidget(Context context) {
         Intent intent = new Intent();
@@ -105,7 +106,7 @@ public class AppUtils {
     public static int UPDATE_WIDGET_JOB_ID = 1;
 
     /**
-     * 取消widget更新任务
+     * Cancel the widget update task
      */
     public static void cancelUpdateWidgetService(Context context) {
         JobScheduler scheduler = (JobScheduler) context
@@ -134,7 +135,7 @@ public class AppUtils {
     }
 
     /**
-     * 粗略判断邮箱
+     * Rough judgment mailbox
      */
     public static boolean isEmail(String content) {
         String pattern = "[a-zA-Z0-9._]+@[a-zA-Z0-9.]+\\.[a-zA-Z0-9.]+";
