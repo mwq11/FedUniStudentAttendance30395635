@@ -108,13 +108,13 @@ public class DialogHelper {
         }
 
         if (listener != null) {
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     listener.onPositive(dialog, which);
                 }
             })
-                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             listener.onNegative(dialog, which);

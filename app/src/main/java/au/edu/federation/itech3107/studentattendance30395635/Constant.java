@@ -4,7 +4,7 @@ package au.edu.federation.itech3107.studentattendance30395635;
 
 public class Constant {
     public static final String INTENT_EDIT_COURSE = "intent_course";
-    public static final String[] WEEK_SINGLE = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    public static final String[] WEEK_SINGLE = {"Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"};
     public static final String[] WEEK = {"", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     public static final String INTENT_ADD_COURSE_ANCESTOR = "intent_add_course_ancestor";
     public static final String INTENT_ADD = "intent_course_add";

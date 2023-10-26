@@ -56,7 +56,7 @@ public class CourseActivity extends AppCompatActivity implements View.OnClickLis
 
     private TextView mTvWeekCount;
     private int mCurrentWeekCount;
-    private int mCurrentMonth;
+    private String mCurrentMonth;
     private ShowDetailDialog mDialog;
     private CourseView mCourseViewV2;
     private LinearLayout mLayoutWeekGroup;
@@ -80,6 +80,7 @@ public class CourseActivity extends AppCompatActivity implements View.OnClickLis
         mLayoutNodeGroup = findViewById(R.id.layout_node_group);
         mLayoutCourse = findViewById(R.id.layout_course);
         mIntentId = getIntent().getIntExtra("id", 0);
+        mCurrentMonth = getIntent().getStringExtra("date");
         ScreenUtils.init(this);
         Preferences.init(this);
         initToolbar();
@@ -330,7 +331,6 @@ public class CourseActivity extends AppCompatActivity implements View.OnClickLis
     @SuppressLint("SetTextI18n")
     public void updateCoursePreference() {
         updateCurrentWeek();
-        mCurrentMonth = TimeUtils.getNowMonth();
         mMMonthTextView.setText(mCurrentMonth + "\nmonth");
 
         //get id

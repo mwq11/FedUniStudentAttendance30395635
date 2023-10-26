@@ -17,7 +17,9 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.MaterialDatePicker;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import au.edu.federation.itech3107.studentattendance30395635.Constant;
@@ -62,7 +64,8 @@ public class CourserFragment extends AppCompatDialogFragment{
              CourseGroupBean courseGroupBean = mAdapter.getData().get(position);
              Constant.selectId = courseGroupBean.getId();
              startActivity(new Intent(getContext(), CourseActivity.class)
-                     .putExtra("id",courseGroupBean.getId()));
+                     .putExtra("id",courseGroupBean.getId())
+                     .putExtra("date",courseGroupBean.getDate()));
          }
       });
       bind.rv.setAdapter(mAdapter);
@@ -103,18 +106,6 @@ public class CourserFragment extends AppCompatDialogFragment{
    }
 
    public void showDataPickDialog(){
-      //            Calendar calendar = Calendar.getInstance();
-//            DatePickerDialog dialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
-//               @Override
-//               public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-//                  String desc = String.format("选中日期%d年%d月%d日",year,month+1,day);
-//
-//               }
-//            },
-//                    calendar.get(Calendar.YEAR),
-//                    calendar.get(Calendar.MARCH),
-//                    calendar.get(Calendar.DAY_OF_MONTH));
-//            dialog.show();
       long today = MaterialDatePicker.todayInUtcMilliseconds();
       Pair<Long, Long> todayPair = new Pair<>(today, today);
       MaterialDatePicker.Builder<Pair<Long, Long>> builder =
@@ -126,8 +117,13 @@ public class CourserFragment extends AppCompatDialogFragment{
          MaterialDatePicker<?> picker = builder.build();
          picker.addOnPositiveButtonClickListener(selection -> {
              headerText = picker.getHeaderText();
+             Pair selection1 = (Pair) selection;
+             Object first = selection1.first;
+             SimpleDateFormat format = new SimpleDateFormat("MM");
+             String format1 = format.format(new Date(Long.parseLong(first + "")));
              CourseGroupBean bean = new CourseGroupBean();
              bean.setName(headerText);
+             bean.setDate(format1);
              Log.e("hao", "headerText: "+headerText);
              UserDataBase.getInstance(getContext()).getCourseGroupDao().insert(bean);
              UserDataBase.getInstance(getContext()).getCourseGroupDao().getAllUsers()

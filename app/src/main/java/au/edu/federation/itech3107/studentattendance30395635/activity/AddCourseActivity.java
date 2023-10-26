@@ -304,9 +304,9 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onSelected(CourseV2 course) {
                 StringBuilder builder = new StringBuilder();
-                builder.append("周").append(Constant.WEEK_SINGLE[course.getCouWeek() - 1])
-                        .append(" 第").append(course.getCouStartNode()).append("-")
-                        .append(course.getCouStartNode() + course.getCouNodeCount() - 1).append("节");
+                builder.append("weeks").append(Constant.WEEK_SINGLE[course.getCouWeek() - 1])
+                        .append(" ").append(course.getCouStartNode()).append("-")
+                        .append(course.getCouStartNode() + course.getCouNodeCount() - 1).append("section");
                 if (!TextUtils.isEmpty(course.getCouLocation())) {
                     builder.append("【").append(course.getCouLocation()).append("】");
                 }

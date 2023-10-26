@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter() {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public'}
+        maven { url 'https://developer.huawei.com/repo/'}
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = "FedUniStudentAttendance30395635"
+include(":app")
+ 

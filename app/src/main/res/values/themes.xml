@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FedUniStudentAttendance30395635" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="animZoomIn" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/alpha</item>
+    </style>
+    <style name="BottomDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomDialog.Animation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/translate_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
+    </style>
+
+    <style name="ActionSheetDialogStyle" parent="android:Theme.Dialog">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+</resources>
