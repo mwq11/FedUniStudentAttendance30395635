@@ -94,7 +94,7 @@ public class CourseV2 extends CourseAncestor implements Serializable {
     }
 
     /**
-     * name teacher location 相等判为同一门课
+     * name teacher location Equal judgment for the same course
      */
     public boolean isSameClass(CourseV2 other) {
         if (other == null) {
@@ -116,7 +116,7 @@ public class CourseV2 extends CourseAncestor implements Serializable {
     }
 
     /**
-     * name teacher 相等判为同一门课
+     * name teacher Equal judgment for the same course
      */
     public boolean isSameClassWithoutLocation(CourseV2 other) {
         if (other == null) {
@@ -135,7 +135,7 @@ public class CourseV2 extends CourseAncestor implements Serializable {
     }
 
     /**
-     * 判断onlyId相等
+     * The onlyId is equal
      */
     public boolean onlyIdEqualsOnlyIdOf(CourseV2 CourseV2) {
         if (CourseV2 == null) {

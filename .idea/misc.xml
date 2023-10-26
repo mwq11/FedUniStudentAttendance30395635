@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android/FedUniStudentAttendance30395635/app/src/main/res/drawable/ic_access_time_black_24dp.xml" value="0.1" />
+        <entry key="..\:/android/FedUniStudentAttendance30395635/app/src/main/res/layout/activity_add_student.xml" value="0.13541666666666666" />
+        <entry key="..\:/android/FedUniStudentAttendance30395635/app/src/main/res/layout/adapter_select_week.xml" value="0.17916666666666667" />
+        <entry key="..\:/android/FedUniStudentAttendance30395635/app/src/main/res/layout/dialog_select_week_and_node.xml" value="0.17916666666666667" />
+        <entry key="..\:/android/FedUniStudentAttendance30395635/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

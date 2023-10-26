@@ -145,7 +145,8 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
             mIntentCourseV2 = (CourseV2) intent.getSerializableExtra(Constant.INTENT_EDIT_COURSE);
             if (mIntentCourseV2 != null) {
                 mAddMode = false; //is edit mode
-                mIntentCourseV2.init();// 从桌面点击过来必然已经初始化 其他位置过来不一定
+                mIntentCourseV2.init();// Clicking from the desktop must have been initialized
+                // from other locations not necessarily
             }
         }
     }
@@ -185,12 +186,12 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
                     courseV2.setCouCgId(couCgId);
                     courseV2.setJoinClassId(Constant.select_class);
                     courseV2.init();
-                    //插入课程
+                    //Insert course
                     UserDataBase.getInstance(this).getCourseDao().insert(courseV2);
                 } else {
                     courseV2.setJoinClassId(Constant.select_class);
                     courseV2.init();
-                    //更新课程
+                    //Update course
                     UserDataBase.getInstance(this).getCourseDao().update(courseV2);
                 }
 
@@ -226,11 +227,11 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
 
             initEmptyLocation(locationItem);
 
-        } else {// 建立默认的上课时间和上课地点
+        } else {// Create a default class time and place
             locationItem.findViewById(R.id.iv_clear).setVisibility(View.INVISIBLE);
 
             if (mAncestor != null) {
-                // 屏幕点击过来
+                // Screen click here
 
                 CourseV2 defaultCourse = new CourseV2().setCouOnlyIdR(AppUtils.createUUID())
                         .setCouAllWeekR(Constant.DEFAULT_ALL_WEEK)

@@ -59,7 +59,7 @@
                     android:id="@+id/etl_teacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:hint="上课老师"
+                    app:hint="teacher"
                     app:hintColor="@color/color_gary_40"
                     app:icon="@drawable/ic_person_black_24dp"
                     app:textColor="@color/secondary_text" />
