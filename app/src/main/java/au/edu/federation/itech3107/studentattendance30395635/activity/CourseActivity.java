@@ -110,7 +110,7 @@ public class CourseActivity extends AppCompatActivity implements View.OnClickLis
         mRvSelectWeek.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 RecyclerView.HORIZONTAL, false));
         ArrayList<String> strings = new ArrayList<>();
-        for (int i = 1; i <= 25; i++) {
+        for (int i = 1; i <= 12; i++) {
             strings.add( i + "week");
         }
         SelectWeekAdapter selectWeekAdapter = new SelectWeekAdapter(R.layout.adapter_select_week, strings);
