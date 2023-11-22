@@ -16,16 +16,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
         />
 
-    <pl.droidsonroids.gif.GifImageView
+    <Button
         android:id="@+id/add"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="right|bottom"
-        android:layout_margin="20dp"
-        android:src="@mipmap/ic_add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:text="@string/add"
         />
 </FrameLayout>

@@ -1,4 +1,4 @@
-package au.edu.federation.itech3107.studentattendance30395635.activity;
+package au.edu.federation.itech3107.studentattendance30395635;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import au.edu.federation.itech3107.studentattendance30395635.databinding.ActivityAddStudentBinding;
-import au.edu.federation.itech3107.studentattendance30395635.room.StudentBean;
-import au.edu.federation.itech3107.studentattendance30395635.room.UserDataBase;
-import au.edu.federation.itech3107.studentattendance30395635.util.StringUtil;
 
 
 public class AddStudentActivity extends AppCompatActivity {
@@ -51,14 +48,14 @@ public class AddStudentActivity extends AppCompatActivity {
                 bean1.setName(bind.etName.getText().toString());
                 bean1.setClassId(mId);
                 bean1.setNumber(Long.parseLong(bind.etNumber.getText().toString()));
-                UserDataBase.getInstance(AddStudentActivity.this).getStudentDao().insert(bean1);
+                new DBOpenHelper().insertStudent(AddStudentActivity.this, bean1);
                 Toast.makeText(AddStudentActivity.this, "Success", Toast.LENGTH_SHORT).show();
                 finish();
             } else {
                 //修改
                 bean.setName(bind.etName.getText().toString());
                 bean.setNumber(Long.parseLong(bind.etNumber.getText().toString()));
-                UserDataBase.getInstance(AddStudentActivity.this).getStudentDao().update(bean);
+                new DBOpenHelper().updateStudent(AddStudentActivity.this, bean);
                 Toast.makeText(AddStudentActivity.this, "Success", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -67,7 +64,7 @@ public class AddStudentActivity extends AppCompatActivity {
         bind.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UserDataBase.getInstance(AddStudentActivity.this).getStudentDao().delete(bean);
+                new DBOpenHelper().deleteStudent(AddStudentActivity.this, bean);
                 finish();
             }
         });
